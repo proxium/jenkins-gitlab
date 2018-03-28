@@ -1,0 +1,14 @@
+version: '2'
+services:
+  gitlab:
+    image: gitlab/gitlab-ce
+    ports:
+      - "880:80"
+      - "222:22"
+  jenkins:
+    build:
+      context: ./jenkins
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+
